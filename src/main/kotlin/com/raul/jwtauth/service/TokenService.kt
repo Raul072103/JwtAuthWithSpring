@@ -32,9 +32,11 @@ class TokenService(
             .signWith(secretKey)
             .compact()
 
-    fun isValid(token: String): String? =
-        getAllClaims(token)
-            .subject
+    fun isValid(token: String, userDetails: UserDetails): Boolean {
+        val email = extractEmail(token)
+
+        return userDetails.username == email && !isExpired(token)
+    }
 
     fun extractEmail(token: String): String? =
         getAllClaims(token)
