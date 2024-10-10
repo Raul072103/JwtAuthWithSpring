@@ -4,6 +4,11 @@ import com.raul.jwtauth.model.Article
 import org.springframework.stereotype.Repository
 import java.util.*
 
+/**
+ * Repository with purpose of retrieving articles.
+ *
+ * It mimics the functionality of an in-memory database without the added complexity.
+ */
 @Repository
 class ArticleRepository {
 

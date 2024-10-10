@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
+/**
+ * Exposes the [/api/article] endpoint and delegates the request to the service.
+ */
 @RestController
 @RequestMapping("/api/article")
 class ArticleController(

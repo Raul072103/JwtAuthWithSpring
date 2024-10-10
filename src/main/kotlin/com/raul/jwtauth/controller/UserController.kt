@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.server.ResponseStatusException
 import java.util.*
 
+/**
+ * Exposes the [/api/user] endpoint and delegates the request to the service.
+ */
 @RestController
 @RequestMapping("/api/user")
 class UserController(

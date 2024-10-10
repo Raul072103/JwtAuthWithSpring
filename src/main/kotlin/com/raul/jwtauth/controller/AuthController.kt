@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.server.ResponseStatusException
 
+/**
+ * Exposes the [/api/auth] endpoint and delegates the request to the service.
+ */
 @RestController
 @RequestMapping("/api/auth")
 class AuthController(

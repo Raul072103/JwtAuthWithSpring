@@ -12,6 +12,10 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component
 import org.springframework.web.filter.OncePerRequestFilter
 
+/**
+ * Filter applied before checking the user credentials to verify if the user is already authenticated
+ * or if it is the first time the user is authenticating.
+ */
 @Component
 class JwtAuthenticationFilter(
     private val userDetailsService: CustomUserDetailsService,

@@ -6,6 +6,11 @@ import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Repository
 import java.util.*
 
+/**
+ * Repository with purpose of retrieving users.
+ *
+ * It mimics the functionality of an in-memory database without the added complexity.
+ */
 @Repository
 class UserRepository(
     private val encoder: PasswordEncoder

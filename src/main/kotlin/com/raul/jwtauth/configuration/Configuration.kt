@@ -13,6 +13,9 @@ import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.security.crypto.password.PasswordEncoder
 
+/**
+ * Providers some dependencies necessary for Spring Security.
+ */
 @Configuration
 @EnableConfigurationProperties(JwtProperties::class)
 class Configuration {

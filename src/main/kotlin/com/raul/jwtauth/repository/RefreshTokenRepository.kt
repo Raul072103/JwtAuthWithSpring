@@ -3,6 +3,9 @@ package com.raul.jwtauth.repository
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.stereotype.Component
 
+/**
+ * Repository for retrieving and storing refresh tokens.
+ */
 @Component
 class RefreshTokenRepository {
 

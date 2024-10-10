@@ -9,11 +9,17 @@ import org.springframework.stereotype.Service
 
 typealias ApplicationUser = com.raul.jwtauth.model.User
 
+/**
+ * Service for obtaining users credentials.
+ */
 @Service
 class CustomUserDetailsService(
     private val userRepository: UserRepository
 ) : UserDetailsService {
 
+    /**
+     * @return [UserDetails] if there is a user with the given username.
+     */
     override fun loadUserByUsername(username: String): UserDetails =
         userRepository.findByEmail(username)
             ?.mapToUserDetails()

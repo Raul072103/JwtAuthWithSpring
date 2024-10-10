@@ -10,6 +10,9 @@ import org.springframework.security.config.http.SessionCreationPolicy
 import org.springframework.security.web.DefaultSecurityFilterChain
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
 
+/**
+ * Sets up the filter chain for incoming HTTP requests.
+ */
 @Configuration
 @EnableWebSecurity
 class SecurityConfiguration(

@@ -11,6 +11,9 @@ import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.stereotype.Service
 import java.util.Date
 
+/**
+ * Service for authenticating the users.
+ */
 @Service
 class AuthenticationService(
     private val authManager: AuthenticationManager,
@@ -20,6 +23,11 @@ class AuthenticationService(
     private val refreshTokenRepository: RefreshTokenRepository,
 ) {
 
+    /**
+     * Method used for obtaining an authentication response.
+     *
+     * @return [AuthenticationResponse] which holds an access and refresh token if valid credentials
+     */
     fun authentication(authenticationRequest: AuthenticationRequest): AuthenticationResponse {
         authManager.authenticate(
             UsernamePasswordAuthenticationToken(
@@ -42,6 +50,11 @@ class AuthenticationService(
 
     }
 
+    /**
+     * Method used for obtaining the refresh token.
+     *
+     * @return Refresh token.
+     */
     fun refreshAccessToken(refreshToken: String): String? {
         val extractedEmail = tokenService.extractEmail(refreshToken)
 
@@ -72,5 +85,4 @@ class AuthenticationService(
 
     private fun getRefreshTokenExpiration(): Date =
         Date(System.currentTimeMillis() + jwtProperties.refreshTokenExpiration)
-
 }
